@@ -1,0 +1,152 @@
+[
+  {
+    "lop": "Chiên Con 1A",
+    "nganh": "Chiên Con",
+    "truong": [{ "ten": "Ly", "ghi_chu": "Trưởng ngành" }],
+    "pho": [{ "ten": "Nhi" }, { "ten": "Dịu" }]
+  },
+  {
+    "lop": "Chiên Con 2A",
+    "nganh": "Chiên Con",
+    "truong": [{ "ten": "Nguyên" }],
+    "pho": [{ "ten": "Ngọc Hiếu" }]
+  },
+  {
+    "lop": "Ấu Nhi 1A",
+    "nganh": "Ấu Nhi",
+    "truong": [{ "ten": "Thiên Trang" }],
+    "pho": [{ "ten": "Ngọc Hải" }]
+  },
+  {
+    "lop": "Ấu Nhi 1B",
+    "nganh": "Ấu Nhi",
+    "truong": [{ "ten": "Phạm Giang" }],
+    "pho": [{ "ten": "Việt Thành" }]
+  },
+  {
+    "lop": "Ấu Nhi 2A",
+    "nganh": "Ấu Nhi",
+    "truong": [{ "ten": "Trà" }],
+    "pho": [{ "ten": "Thu Hà" }, { "ten": "Tươi" }]
+  },
+  {
+    "lop": "Ấu Nhi 2B",
+    "nganh": "Ấu Nhi",
+    "truong": [{ "ten": "Hữu Sơn", "ghi_chu": "Trưởng ngành" }],
+    "pho": [{ "ten": "Quỳnh" }]
+  },
+  {
+    "lop": "Ấu Nhi 3A",
+    "nganh": "Ấu Nhi",
+    "truong": [{ "ten": "Nguyễn Thị Tuyết Mai" }],
+    "pho": [{ "ten": "Ngọc Ánh" }]
+  },
+  {
+    "lop": "Ấu Nhi 3B",
+    "nganh": "Ấu Nhi",
+    "truong": [{ "ten": "Chuyên" }],
+    "pho": [{ "ten": "Thu Huyền" }]
+  },
+  {
+    "lop": "Ấu Nhi 3C",
+    "nganh": "Ấu Nhi",
+    "truong": [{ "ten": "Nguyễn Thị Huyền" }],
+    "pho": [{ "ten": "Ngọc Sơn" }]
+  },
+  {
+    "lop": "Thiếu Nhi 1A",
+    "nganh": "Thiếu Nhi",
+    "truong": [{ "ten": "Nga" }],
+    "pho": [{ "ten": "Văn Thành" }]
+  },
+  {
+    "lop": "Thiếu Nhi 1B",
+    "nganh": "Thiếu Nhi",
+    "truong": [{ "ten": "Hường" }],
+    "pho": [{ "ten": "Phương Thu" }]
+  },
+  {
+    "lop": "Thiếu Nhi 2A",
+    "nganh": "Thiếu Nhi",
+    "truong": [{ "ten": "Bùi Luân" }],
+    "pho": [{ "ten": "Quang Luân" }]
+  },
+  {
+    "lop": "Thiếu Nhi 2B",
+    "nganh": "Thiếu Nhi",
+    "truong": [{ "ten": "Phan Huyền" }],
+    "pho": [{ "ten": "My" }]
+  },
+  {
+    "lop": "Thiếu Nhi 3A",
+    "nganh": "Thiếu Nhi",
+    "truong": [{ "ten": "Phạm Trang" }],
+    "pho": [{ "ten": "Hoàng Sơn" }]
+  },
+  {
+    "lop": "Thiếu Nhi 3B",
+    "nganh": "Thiếu Nhi",
+    "truong": [{ "ten": "Uyên" }],
+    "pho": [{ "ten": "Công" }]
+  },
+  {
+    "lop": "Thiếu Nhi 3C",
+    "nganh": "Thiếu Nhi",
+    "truong": [{ "ten": "Tĩnh", "ghi_chu": "Trưởng ngành" }],
+    "pho": [{ "ten": "Uyển" }]
+  },
+  {
+    "lop": "Nghĩa Sĩ 1A",
+    "nganh": "Nghĩa Sĩ",
+    "truong": [{ "ten": "Thoa" }],
+    "pho": [{ "ten": "Chí" }]
+  },
+  {
+    "lop": "Nghĩa Sĩ 1B",
+    "nganh": "Nghĩa Sĩ",
+    "truong": [{ "ten": "Hiệu" }],
+    "pho": [{ "ten": "Nhung" }]
+  },
+  {
+    "lop": "Nghĩa Sĩ 1C",
+    "nganh": "Nghĩa Sĩ",
+    "truong": [{ "ten": "Hoàng Trang" }],
+    "pho": [{ "ten": "Thắng" }]
+  },
+  {
+    "lop": "Nghĩa Sĩ 2A",
+    "nganh": "Nghĩa Sĩ",
+    "truong": [{ "ten": "Tiến" }],
+    "pho": [{ "ten": "Chăm" }]
+  },
+  {
+    "lop": "Nghĩa Sĩ 2B",
+    "nganh": "Nghĩa Sĩ",
+    "truong": [{ "ten": "Tú", "ghi_chu": "Trưởng ngành" }],
+    "pho": [{ "ten": "Chăm" }]
+  },
+  {
+    "lop": "Nghĩa Sĩ 3A",
+    "nganh": "Nghĩa Sĩ",
+    "truong": [{ "ten": "Thanh Thu" }],
+    "pho": [{ "ten": "Vương Trường" }]
+  },
+  {
+    "lop": "Hiệp Sĩ 1A",
+    "nganh": "Hiệp Sĩ",
+    "truong": [{ "ten": "Sang" }],
+    "pho": [{ "ten": "Xuân Sơn", "ghi_chu": "Trưởng ngành" }]
+  },
+  {
+    "lop": "Hiệp Sĩ 1B",
+    "nganh": "Hiệp Sĩ",
+    "truong": [{ "ten": "Hiếu" }],
+    "pho": [{ "ten": "Phạm Tuyết Mai" }]
+  },
+  {
+    "lop": "Hiệp Sĩ 2A",
+    "nganh": "Hiệp Sĩ",
+    "truong": [{ "ten": "Đức Trường" }],
+    "pho": [{ "ten": "Anna Nga" }]
+  }
+]

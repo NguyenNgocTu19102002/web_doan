@@ -1,0 +1,886 @@
+/* Lời Chúa — giao diện sách lễ, màu theo mùa phụng vụ */
+
+.loichua-page {
+    --lc-accent: #2563eb;
+    --lc-accent-dark: #1e3a8a;
+    --lc-accent-soft: #eff6ff;
+    --lc-accent-glow: rgba(37, 99, 235, 0.18);
+    --lc-swatch: #2563eb;
+    --lc-text: #1f2937;
+    --lc-muted: #6b7280;
+    --lc-bg: #f6f3ee;
+    --lc-card: #ffffff;
+    --lc-border: #ece7df;
+    --lc-serif: 'Crimson Text', Georgia, serif;
+    --lc-sans: 'Nunito', system-ui, sans-serif;
+    --lc-radius: 20px;
+    --lc-shadow: 0 12px 36px rgba(60, 45, 20, 0.08);
+    margin: 0;
+    font-family: var(--lc-sans);
+    color: var(--lc-text);
+    background: var(--lc-bg);
+    min-height: 100vh;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.loichua-page *,
+.loichua-page *::before,
+.loichua-page *::after {
+    box-sizing: border-box;
+}
+
+.loichua-page.theme-green {
+    --lc-accent: #15803d;
+    --lc-accent-dark: #14532d;
+    --lc-accent-soft: #effaf2;
+    --lc-accent-glow: rgba(21, 128, 61, 0.2);
+    --lc-swatch: #16a34a;
+}
+
+.loichua-page.theme-purple {
+    --lc-accent: #7c3aed;
+    --lc-accent-dark: #4c1d95;
+    --lc-accent-soft: #f6f2ff;
+    --lc-accent-glow: rgba(124, 58, 237, 0.2);
+    --lc-swatch: #7c3aed;
+}
+
+.loichua-page.theme-white {
+    --lc-accent: #b7791f;
+    --lc-accent-dark: #744210;
+    --lc-accent-soft: #fffaeb;
+    --lc-accent-glow: rgba(183, 121, 31, 0.2);
+    --lc-swatch: #ffffff;
+}
+
+.loichua-page.theme-red {
+    --lc-accent: #c53030;
+    --lc-accent-dark: #742a2a;
+    --lc-accent-soft: #fff5f5;
+    --lc-accent-glow: rgba(197, 48, 48, 0.2);
+    --lc-swatch: #dc2626;
+}
+
+.loichua-page.theme-rose {
+    --lc-accent: #d53f8c;
+    --lc-accent-dark: #97266d;
+    --lc-accent-soft: #fff5fa;
+    --lc-accent-glow: rgba(213, 63, 140, 0.2);
+    --lc-swatch: #ec4899;
+}
+
+/* ===== Topbar ===== */
+.lc-topbar {
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--lc-border);
+}
+
+.lc-topbar-inner {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0.7rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+}
+
+.lc-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.45rem 0.85rem;
+    border-radius: 999px;
+    font-size: 0.86rem;
+    font-weight: 700;
+    color: var(--lc-muted);
+    text-decoration: none;
+    background: #faf8f5;
+    border: 1px solid var(--lc-border);
+    transition: all 0.15s;
+}
+
+.lc-back:hover {
+    color: var(--lc-accent-dark);
+    border-color: var(--lc-accent);
+    background: var(--lc-accent-soft);
+}
+
+.lc-topbar-title {
+    flex: 1;
+    margin: 0;
+    font-family: var(--lc-serif);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--lc-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.lc-topbar-title i {
+    color: var(--lc-accent);
+}
+
+.lc-topbar-logo {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    flex: 0 0 36px;
+}
+
+/* ===== Main ===== */
+.lc-main {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 1.5rem 1.25rem 2.5rem;
+}
+
+/* ===== Hero ===== */
+.lc-hero {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--lc-radius) var(--lc-radius) 0 0;
+    color: #fff;
+    background:
+        radial-gradient(circle at 88% 12%, rgba(255, 255, 255, 0.22), transparent 42%),
+        radial-gradient(circle at 8% 110%, rgba(255, 255, 255, 0.12), transparent 45%),
+        linear-gradient(135deg, var(--lc-accent-dark) 0%, var(--lc-accent) 100%);
+    box-shadow: 0 18px 40px var(--lc-accent-glow);
+}
+
+.lc-hero::after {
+    content: '\271D';
+    position: absolute;
+    right: 1.5rem;
+    bottom: -2.2rem;
+    font-size: 11rem;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.08);
+    pointer-events: none;
+    font-family: Georgia, serif;
+}
+
+.loichua-page.theme-white .lc-hero {
+    background:
+        radial-gradient(circle at 88% 12%, rgba(255, 255, 255, 0.35), transparent 45%),
+        linear-gradient(135deg, #8a5a14 0%, #c8962f 55%, #e2b85a 100%);
+}
+
+.lc-hero-inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.75rem 1.9rem 1.85rem;
+}
+
+.lc-hero-date {
+    flex: 0 0 auto;
+    min-width: 112px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.85rem 1rem 0.9rem;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    text-align: center;
+}
+
+.lc-hero-weekday {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.92;
+}
+
+.lc-hero-day {
+    font-family: var(--lc-serif);
+    font-size: 3.4rem;
+    font-weight: 700;
+    line-height: 1;
+    margin: 0.1rem 0 0.15rem;
+}
+
+.lc-hero-month {
+    font-size: 0.8rem;
+    font-weight: 700;
+    opacity: 0.9;
+    white-space: nowrap;
+}
+
+.lc-hero-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.lc-hero-kicker {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.45rem;
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.9;
+}
+
+.lc-today-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.15rem 0.6rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.22);
+    letter-spacing: 0.06em;
+}
+
+.lc-today-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #86efac;
+    box-shadow: 0 0 0 3px rgba(134, 239, 172, 0.3);
+    animation: lc-pulse 2s ease-in-out infinite;
+}
+
+@keyframes lc-pulse {
+    0%, 100% { box-shadow: 0 0 0 3px rgba(134, 239, 172, 0.3); }
+    50% { box-shadow: 0 0 0 6px rgba(134, 239, 172, 0.08); }
+}
+
+.lc-hero-title {
+    margin: 0;
+    font-family: var(--lc-serif);
+    font-size: clamp(1.6rem, 4.2vw, 2.3rem);
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+}
+
+.lc-hero-sub {
+    margin: 0.35rem 0 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+.lc-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-top: 0.95rem;
+}
+
+.lc-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.26);
+    white-space: nowrap;
+}
+
+.lc-chip i {
+    font-size: 0.72rem;
+    opacity: 0.85;
+}
+
+.lc-chip.ref {
+    font-family: var(--lc-serif);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.lc-swatch {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--lc-swatch);
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== Thanh chọn ngày ===== */
+.lc-datebar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 0.9rem;
+    margin-bottom: 1.35rem;
+    background: var(--lc-card);
+    border: 1px solid var(--lc-border);
+    border-top: none;
+    border-radius: 0 0 var(--lc-radius) var(--lc-radius);
+    box-shadow: var(--lc-shadow);
+}
+
+.lc-nav-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    height: 40px;
+    padding: 0 0.85rem;
+    border-radius: 12px;
+    border: 1px solid var(--lc-border);
+    background: #faf8f5;
+    color: var(--lc-text);
+    font-size: 0.86rem;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.15s;
+}
+
+.lc-nav-btn i {
+    font-size: 0.78rem;
+}
+
+.lc-nav-btn:hover:not(.disabled) {
+    background: var(--lc-accent);
+    color: #fff;
+    border-color: var(--lc-accent);
+}
+
+.lc-nav-btn.disabled {
+    opacity: 0.35;
+    pointer-events: none;
+}
+
+.lc-date-picker-wrap {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+}
+
+.lc-date-picker-wrap i {
+    position: absolute;
+    left: 0.9rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--lc-accent);
+    pointer-events: none;
+    font-size: 0.9rem;
+}
+
+.lc-date-picker {
+    width: 100%;
+    height: 40px;
+    padding: 0 0.85rem 0 2.4rem;
+    border: 1px solid var(--lc-border);
+    border-radius: 12px;
+    font-family: var(--lc-sans);
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--lc-text);
+    background: #faf8f5;
+    cursor: pointer;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.lc-date-picker:hover,
+.lc-date-picker:focus {
+    outline: none;
+    border-color: var(--lc-accent);
+    box-shadow: 0 0 0 3px var(--lc-accent-glow);
+}
+
+.lc-btn-today {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    height: 40px;
+    padding: 0 1rem;
+    border-radius: 12px;
+    font-size: 0.86rem;
+    font-weight: 800;
+    text-decoration: none;
+    color: #fff;
+    background: var(--lc-accent);
+    white-space: nowrap;
+    transition: filter 0.15s;
+}
+
+.lc-btn-today:hover {
+    filter: brightness(1.08);
+}
+
+/* ===== Tabs ===== */
+.lc-tabs-wrap {
+    position: sticky;
+    top: 3.6rem;
+    z-index: 150;
+    margin-bottom: 1.1rem;
+    padding: 0.35rem 0;
+    background: linear-gradient(180deg, var(--lc-bg) 75%, transparent);
+}
+
+.lc-tabs {
+    display: flex;
+    gap: 0.35rem;
+    padding: 0.3rem;
+    background: var(--lc-card);
+    border-radius: 999px;
+    border: 1px solid var(--lc-border);
+    box-shadow: 0 6px 18px rgba(60, 45, 20, 0.06);
+}
+
+.lc-tab {
+    flex: 1;
+    padding: 0.6rem 1rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 800;
+    text-decoration: none;
+    color: var(--lc-muted);
+    text-align: center;
+    white-space: nowrap;
+    transition: all 0.15s;
+}
+
+.lc-tab:hover {
+    color: var(--lc-accent-dark);
+}
+
+.lc-tab.active {
+    background: var(--lc-accent);
+    color: #fff;
+    box-shadow: 0 4px 12px var(--lc-accent-glow);
+}
+
+/* ===== Bài đọc ===== */
+.lc-readings {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.lc-reading {
+    background: var(--lc-card);
+    border-radius: var(--lc-radius);
+    border: 1px solid var(--lc-border);
+    box-shadow: var(--lc-shadow);
+    overflow: hidden;
+    scroll-margin-top: 7.5rem;
+}
+
+.lc-reading-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.1rem 1.6rem;
+    border-bottom: 1px solid var(--lc-border);
+}
+
+.lc-reading-header h3 {
+    margin: 0;
+    font-family: var(--lc-serif);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--lc-text);
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+}
+
+.lc-h-ico {
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    color: var(--lc-accent);
+    background: var(--lc-accent-soft);
+}
+
+.lc-reading-header .lc-ref {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--lc-muted);
+    background: #faf8f5;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    border: 1px solid var(--lc-border);
+    white-space: nowrap;
+}
+
+.lc-reading-body {
+    padding: 1.5rem 1.9rem 1.8rem;
+}
+
+.lc-reading-text {
+    font-family: var(--lc-serif);
+    font-size: 1.2rem;
+    line-height: 1.85;
+    color: #2d2a26;
+    text-align: justify;
+    hyphens: auto;
+}
+
+.lc-reading-text p {
+    margin: 0 0 0.95rem;
+}
+
+.lc-reading-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* Mục con: Bài đọc I / Đáp ca / Alleluia / Phúc Âm */
+.lc-subsection {
+    position: relative;
+    padding-bottom: 1.6rem;
+    margin-bottom: 1.6rem;
+}
+
+.lc-subsection::after {
+    content: '\2766';
+    position: absolute;
+    left: 50%;
+    bottom: -0.75rem;
+    transform: translateX(-50%);
+    padding: 0 0.75rem;
+    background: var(--lc-card);
+    color: var(--lc-accent);
+    opacity: 0.55;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.lc-subsection::before {
+    content: '';
+    position: absolute;
+    left: 15%;
+    right: 15%;
+    bottom: 0;
+    border-bottom: 1px solid var(--lc-border);
+}
+
+.lc-subsection:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.lc-subsection:last-child::before,
+.lc-subsection:last-child::after {
+    display: none;
+}
+
+.lc-sub-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 0.65rem;
+    margin: 0 0 0.9rem;
+}
+
+.lc-sub-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.28rem 0.85rem;
+    border-radius: 999px;
+    font-family: var(--lc-sans);
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--lc-accent-dark);
+    background: var(--lc-accent-soft);
+}
+
+.lc-sub-ref {
+    font-family: var(--lc-serif);
+    font-size: 1.05rem;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--lc-muted);
+}
+
+.lc-subsection.psalm .lc-reading-text,
+.lc-subsection.alleluia .lc-reading-text {
+    font-style: italic;
+    color: #4a4540;
+    padding-left: 1rem;
+    border-left: 3px solid var(--lc-accent-soft);
+    text-align: left;
+}
+
+.lc-subsection.gospel {
+    margin-left: -0.6rem;
+    margin-right: -0.6rem;
+    padding: 1.25rem 1.35rem;
+    border-radius: 16px;
+    background: linear-gradient(180deg, var(--lc-accent-soft) 0%, rgba(255, 255, 255, 0) 100%);
+    border: 1px solid var(--lc-border);
+}
+
+.lc-subsection.gospel .lc-sub-label {
+    color: #fff;
+    background: var(--lc-accent);
+}
+
+.lc-subsection.gospel .lc-reading-text {
+    color: #1f1c19;
+}
+
+/* Tin Mừng riêng (khi không có bài đọc) */
+.lc-reading.gospel .lc-reading-header {
+    background: linear-gradient(135deg, var(--lc-accent-dark), var(--lc-accent));
+    border-bottom: none;
+}
+
+.lc-reading.gospel .lc-reading-header h3 {
+    color: #fff;
+}
+
+.lc-reading.gospel .lc-h-ico {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.lc-reading.gospel .lc-reading-header .lc-ref {
+    color: var(--lc-accent-dark);
+    border-color: transparent;
+    background: #fff;
+}
+
+/* Suy niệm */
+.lc-reading.reflection .lc-reading-body {
+    position: relative;
+    background: linear-gradient(180deg, #fffdf9 0%, #fff 100%);
+}
+
+.lc-reading.reflection .lc-reading-body::before {
+    content: '\201C';
+    position: absolute;
+    top: -0.4rem;
+    left: 1rem;
+    font-family: Georgia, serif;
+    font-size: 5.5rem;
+    line-height: 1;
+    color: var(--lc-accent);
+    opacity: 0.12;
+    pointer-events: none;
+}
+
+.lc-reading.reflection .lc-reading-text {
+    position: relative;
+    font-size: 1.12rem;
+    line-height: 1.82;
+    color: #3f3a34;
+}
+
+/* Trống */
+.lc-empty {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    color: var(--lc-muted);
+}
+
+.lc-empty i {
+    font-size: 2.6rem;
+    color: var(--lc-accent);
+    opacity: 0.35;
+    margin-bottom: 0.85rem;
+    display: block;
+}
+
+.lc-empty p {
+    margin: 0 auto;
+    max-width: 420px;
+    font-weight: 600;
+}
+
+/* ===== Footer ===== */
+.lc-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 1.5rem 1.25rem 2rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--lc-muted);
+    text-align: center;
+}
+
+.lc-footer-logo {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    opacity: 0.85;
+}
+
+.lc-footer a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--lc-accent);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.lc-footer a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 640px) {
+    .lc-topbar-inner {
+        padding: 0.6rem 0.85rem;
+        gap: 0.6rem;
+    }
+
+    .lc-back {
+        padding: 0.45rem 0.65rem;
+    }
+
+    .lc-back span {
+        display: none;
+    }
+
+    .lc-topbar-title {
+        font-size: 1.08rem;
+    }
+
+    .lc-topbar-logo {
+        width: 32px;
+        height: 32px;
+        flex-basis: 32px;
+    }
+
+    .lc-main {
+        padding: 0.85rem 0.7rem 1.75rem;
+    }
+
+    .lc-hero-inner {
+        gap: 1rem;
+        padding: 1.25rem 1.1rem 1.35rem;
+        align-items: flex-start;
+    }
+
+    .lc-hero-date {
+        min-width: 78px;
+        padding: 0.6rem 0.6rem 0.65rem;
+        border-radius: 14px;
+    }
+
+    .lc-hero-day {
+        font-size: 2.5rem;
+    }
+
+    .lc-hero-month {
+        font-size: 0.7rem;
+    }
+
+    .lc-hero-weekday {
+        font-size: 0.64rem;
+    }
+
+    .lc-hero-kicker {
+        font-size: 0.66rem;
+    }
+
+    .lc-hero::after {
+        font-size: 8rem;
+        right: 0.5rem;
+    }
+
+    .lc-chips {
+        gap: 0.35rem;
+        margin-top: 0.75rem;
+    }
+
+    .lc-chip {
+        font-size: 0.74rem;
+        padding: 0.25rem 0.6rem;
+    }
+
+    .lc-chip.ref {
+        font-size: 0.82rem;
+    }
+
+    .lc-datebar {
+        padding: 0.6rem;
+        gap: 0.4rem;
+        flex-wrap: wrap;
+    }
+
+    .lc-nav-btn {
+        width: 40px;
+        padding: 0;
+    }
+
+    .lc-nav-btn span {
+        display: none;
+    }
+
+    .lc-btn-today {
+        padding: 0 0.75rem;
+    }
+
+    .lc-tabs-wrap {
+        top: 3.2rem;
+    }
+
+    .lc-reading-header {
+        padding: 0.9rem 1rem;
+    }
+
+    .lc-reading-header h3 {
+        font-size: 1.15rem;
+    }
+
+    .lc-h-ico {
+        width: 32px;
+        height: 32px;
+        flex-basis: 32px;
+        border-radius: 10px;
+    }
+
+    .lc-reading-header .lc-ref {
+        display: none;
+    }
+
+    .lc-reading-body {
+        padding: 1.1rem 1.05rem 1.35rem;
+    }
+
+    .lc-reading-text {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        text-align: left;
+    }
+
+    .lc-subsection.gospel {
+        margin-left: -0.35rem;
+        margin-right: -0.35rem;
+        padding: 1rem 0.95rem;
+    }
+}

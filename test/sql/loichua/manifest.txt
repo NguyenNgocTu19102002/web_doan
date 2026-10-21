@@ -1,0 +1,13 @@
+Lời Chúa — sao lưu SQL
+Thời gian: 2026-07-11 05:09:27
+Database nguồn: tntt_lap_tri@localhost
+Bảng: loichua_daily, liturgy_calendar
+loichua_daily: 103 dòng
+liturgy_calendar: 92 dòng
+
+File dùng import: loichua_latest.sql (đủ cấu trúc + dữ liệu)
+File chỉ cấu trúc: loichua_schema.sql
+
+Import sang DB khác:
+  mysql -u USER -p TEN_DB_MOI < sql/loichua/loichua_latest.sql
+  hoặc: php scripts/import_loichua_backup.php --db=TEN_DB_MOI

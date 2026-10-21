@@ -1,0 +1,32 @@
+LỜI CHÚA — SAO LƯU SQL RIÊNG
+=============================
+
+Thư mục này chứa dữ liệu Lời Chúa tách khỏi database chính,
+để bạn có thể import sang database/SQL khác.
+
+BẢNG GỒM:
+  - loichua_daily      : nội dung bài đọc, đáp ca, alleluia, tin mừng, suy niệm
+  - liturgy_calendar   : lịch phụng vụ (ngày lễ, màu áo lễ, trích dẫn tóm tắt)
+
+FILE:
+  loichua_latest.sql           → Bản mới nhất (cấu trúc + toàn bộ dữ liệu) — DÙNG FILE NÀY
+  loichua_schema.sql           → Chỉ cấu trúc bảng, không có dữ liệu
+  loichua_backup_YYYY-MM-DD_*  → Bản sao lưu theo thời điểm
+  manifest.txt                 → Thông tin lần backup gần nhất
+
+IMPORT SANG DATABASE KHÁC (phpMyAdmin):
+  1. Tạo database mới (hoặc chọn database đích)
+  2. Tab Import → chọn file loichua_latest.sql → Go
+
+IMPORT BẰNG DÒNG LỆNH:
+  c:\xampp\mysql\bin\mysql.exe -u root TEN_DATABASE < sql\loichua\loichua_latest.sql
+
+  hoặc:
+  c:\xampp\php\php.exe scripts\import_loichua_backup.php --db=TEN_DATABASE
+
+SAO LƯU LẠI SAU KHI CẬP NHẬT DỮ LIỆU:
+  c:\xampp\php\php.exe scripts\export_loichua_backup.php
+
+GHI CHÚ:
+  - Database hiện tại (local): tntt_lap_tri
+  - Khi chuyển sang DB khác, cập nhật db_env.php hoặc tách cấu hình riêng cho module Lời Chúa.
