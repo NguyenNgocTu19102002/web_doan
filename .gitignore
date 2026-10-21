@@ -1,0 +1,15 @@
+# Face service local secrets, models and generated files
+.env.face
+face-service/.venv/
+face-service/models/*.onnx
+__pycache__/
+*.pyc
+
+# Keep verification files locally; exclude them from the deployment branch.
+/tests/face_attendance/
+/face-service/tests/
+/face-service/requirements-test.txt
+/docs/face-attendance/testcases.md
+/docs/face-attendance/test-report.md
+/docs/face-attendance/LOCAL-UBUNTU.md
+/docs/superpowers/plans/2026-10-21-face-attendance.md

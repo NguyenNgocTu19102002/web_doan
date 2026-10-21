@@ -2372,6 +2372,11 @@ function tinh_thoi_gian_sinh_hoat($ngay_gia_nhap) {
                                 <div class="accordion-body">
                                     <?php if ($logged_in && ($is_hdt_manager || $is_class_leader)): ?>
                                     <div class="d-flex flex-wrap gap-2 mb-3">
+                                        <?php if (getenv('FACE_ENABLED') === '1'): ?>
+                                        <a href="diem_danh_face.php?class_id=<?php echo (int)$class_id; ?>&ngay=<?php echo urlencode($selected_attendance_date); ?>&activity=<?php echo urlencode($selected_activity); ?>" class="btn btn-primary btn-sm">
+                                            Điểm danh khuôn mặt
+                                        </a>
+                                        <?php endif; ?>
                                         <a href="diem_danh_qr.php?class_id=<?php echo (int)$class_id; ?>&ngay=<?php echo urlencode($selected_attendance_date); ?>&activity=<?php echo urlencode($selected_activity); ?>" class="btn btn-success btn-sm">
                                             <i class="fa-solid fa-qrcode me-1"></i>Quét QR điểm danh
                                         </a>

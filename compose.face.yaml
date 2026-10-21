@@ -1,0 +1,22 @@
+# Add this service to an existing web Compose stack, or run alongside host PHP.
+services:
+  face-service:
+    build: ./face-service
+    restart: unless-stopped
+    environment:
+      FACE_SERVICE_KEY: ${FACE_SERVICE_KEY:?Set FACE_SERVICE_KEY outside the public web root}
+      FACE_MATCH_THRESHOLD: ${FACE_MATCH_THRESHOLD:-0.60}
+      FACE_MATCH_MARGIN: ${FACE_MATCH_MARGIN:-0.10}
+    # Host PHP can call loopback; never expose 8000 publicly.
+    ports:
+      - "127.0.0.1:8000:8000"
+    read_only: true
+    tmpfs:
+      - /tmp:size=32m
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    mem_limit: 1g
+    cpus: 2
+    pids_limit: 100
