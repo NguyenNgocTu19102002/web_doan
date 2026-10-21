@@ -36,6 +36,15 @@ ai xác nhận, trạng thái trước/sau và similarity (không phải xác su
 - Hosting PHP thông thường chưa chắc chạy được service; xác nhận hỗ trợ trước khi bật.
 
 ## Cài đặt (chạy tại máy chủ sau khi review)
+
+Người cấu hình server xem file [`.env.face.example`](../../.env.face.example).
+Mô hình hosting PHP + Python riêng dùng `FACE_SERVICE_URL=https://face-api.saviolaptri.com`.
+Đây là địa chỉ dự kiến: cần cấu hình DNS, HTTPS và reverse proxy tới service Python
+trước khi sử dụng. Trên hosting PHP, cấp đủ bốn biến trong file mẫu; phía Python
+chỉ cần cùng `FACE_SERVICE_KEY`. Thay các placeholder khóa bằng khóa server thực tế.
+Không upload file chứa khóa vào thư mục public. PHP không tự đọc `.env`;
+người triển khai phải cấp biến qua cấu hình hosting/PHP hoặc Docker.
+
 1. Sao lưu DB. Import **chỉ** `sql/face_attendance/setup.sql` vào DB website.
    Migration bổ sung hai bảng, không reset dữ liệu. Không cần import lại toàn bộ dump.
 2. Tạo hai secret độc lập bằng `openssl rand -hex 32` (chạy hai lần), lưu ngoài
